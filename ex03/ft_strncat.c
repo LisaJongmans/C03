@@ -6,14 +6,14 @@
 /*   By: ljongman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/15 21:29:00 by ljongman          #+#    #+#             */
-/*   Updated: 2019/07/15 21:33:29 by ljongman         ###   ########.fr       */
+/*   Updated: 2019/07/16 18:18:16 by ljongman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <unistd.h>
 
-char	ft_strncat(char *dest, char *src, unsigned int nb)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
 	unsigned int	i;
 	int				j;
@@ -29,7 +29,8 @@ char	ft_strncat(char *dest, char *src, unsigned int nb)
 		dest[j + i] = src[i];
 		i++;
 	}
-	return (*dest);
+	dest[j + i] = '\0';
+	return (dest);
 }
 
 int		main(void)
